@@ -1,5 +1,6 @@
 // import * as ACTION_TYPES from '../actions/action_type';
 import { IAction, ActionType, IState } from '../../types/reducer';
+import { RootState } from '../store';
 
 export const dogInitialState: IState = {
   breed: 'all',
@@ -49,4 +50,5 @@ const dogReducer = (state = dogInitialState, action: IAction): IState => {
   }
 };
 
+export const selectState = (state:RootState) => state.dogReducer;
 export default dogReducer;
