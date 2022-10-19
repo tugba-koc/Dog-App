@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { ActionType } from '../../types/reducer';
+import { ActionType, NumberAction } from '../../types/reducer';
 import Dropdown from './Dropdown';
 import { DogFormContainer } from './styles';
 
@@ -19,10 +19,25 @@ function DogForm(props: Props) {
       payload: value,
     });
   };
+  const renderSubBreed = (value: string) => {
+    dispatch({
+      type: ActionType.SUB_BREED,
+      payload: value,
+    });
+  };
+  const renderNumber = (value: string) => {
+    dispatch({
+      type: ActionType.NUMBER,
+      payload: value,
+    });
+  }
+
+  console.log(images);
+  
 
   return (
     <DogFormContainer>
-      <Dropdown title='Select an item' showError={false}>
+      <Dropdown title='Select a Breed' showError={false}>
         <select onChange={(e) => renderBreed(e.target.value)}>
           <option value='all'>Select Breeds</option>
           {breedList &&
@@ -31,6 +46,28 @@ function DogForm(props: Props) {
                 {breed}
               </option>
             ))}
+        </select>{' '}
+      </Dropdown>
+      <Dropdown title='Select a Sub Breed' showError={false}>
+        <select onChange={(e) => renderSubBreed(e.target.value)}>
+          <option value='all'>Select Sub Breed</option>
+          {subBreedList &&
+            subBreedList?.map((subbreed: string, index: number) => (
+              <option value={subbreed} key={index}>
+                {subbreed}
+              </option>
+            ))}
+        </select>{' '}
+      </Dropdown>
+      <Dropdown title='Number of Images' showError={false}>
+        <select onChange={(e) => renderNumber(e.target.value)}>
+          <option value='all'>Select Number of Images</option>
+          {/* {images &&
+            images?.map((num: string, index: number) => (
+              <option value={num} key={index}>
+                {num}
+              </option>
+            ))} */}
         </select>{' '}
       </Dropdown>
     </DogFormContainer>

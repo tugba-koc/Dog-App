@@ -13,9 +13,9 @@ export const fetchDogData = async () => {
 };
 
 // fetch the sub breed
-export const fetchSubBreed = async (subBreed: string) => {
+export const fetchSubBreed = async (breed: string) => {
   try {
-    let response = await instance.get(`/breed/${subBreed}/list`);
+    let response = await instance.get(`/breed/${breed}/list`);
     return response?.data;
   } catch (err) {
     console.log(err);
@@ -33,11 +33,17 @@ export const fetchBreedImages = async (breed: string, count: string) => {
 };
 
 // fetch subbreed images
-export const fetchSubBreedImages = async (breed: string, subBreed: string, count: string) => {
-    try {
-      let response = await instance.get(`/breed/${breed}/${subBreed}/images/random/${count}`);
-      return response?.data;
-    } catch (err) {
-      console.log(err);
-    }
-  };
+export const fetchSubBreedImages = async (
+  breed: string,
+  subBreed: string,
+  count: string
+) => {
+  try {
+    let response = await instance.get(
+      `/breed/${breed}/${subBreed}/images/random/${count}`
+    );
+    return response?.data;
+  } catch (err) {
+    console.log(err);
+  }
+};

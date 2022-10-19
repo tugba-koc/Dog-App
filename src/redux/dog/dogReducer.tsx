@@ -50,5 +50,7 @@ const dogReducer = (state = dogInitialState, action: IAction): IState => {
   }
 };
 
-export const selectState = (state:RootState) => state.dogReducer;
+export const selectBreedState = (state:RootState) => state.dogReducer.breed;
+export const selectSubBreedState = (state:RootState) => state.dogReducer.subBreed;
+export const selectNumber = (state:RootState) => state.dogReducer.number;
 export default dogReducer;
