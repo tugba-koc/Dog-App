@@ -5,7 +5,11 @@ import { fetchBreedImages, fetchDogData, fetchSubBreed } from './axios/api';
 import { useCallback, useEffect, useState } from 'react';
 import DogForm from './components/DogForm';
 import { useSelector } from 'react-redux';
-import { selectBreedState, selectNumber, selectSubBreedState } from './redux/dog/dogReducer';
+import {
+  selectBreedState,
+  selectNumber,
+  selectSubBreedState,
+} from './redux/dog/dogReducer';
 
 function App() {
   const [breedList, setbreedList] = useState<Array<any>>([]);
@@ -55,6 +59,8 @@ function App() {
     subBreedList: subBreedList,
     images: images,
     isLoading: isLoading,
+    setimages: setimages,
+    setisLoading: setisLoading,
   };
 
   if (isLoading) {
@@ -72,7 +78,6 @@ function App() {
             <li>Redux for State Management</li>
             <li>Axios for fetching Data</li>
             <li>Styled Components</li>
-            {/* <li> Unit Tests With Jest & React Testing Library</li> */}
           </ul>
           <br />
         </Description>
