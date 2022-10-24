@@ -1,6 +1,6 @@
 import dogReducer from './dog/dogReducer';
-import { createStore } from "redux";
-import { combineReducers, compose } from "redux";
+import { createStore } from 'redux';
+import { combineReducers, compose } from 'redux';
 
 declare global {
   interface Window {
@@ -13,7 +13,7 @@ const reducers = combineReducers({
 });
 
 const composeEnhancers =
-  (typeof window !== "undefined" &&
+  (typeof window !== 'undefined' &&
     window?.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
   compose;
 

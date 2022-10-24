@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const FetchButton = styled.button`
   appearance: button;
@@ -13,7 +13,7 @@ export const FetchButton = styled.button`
   outline: none;
   padding: 0 25px;
   text-align: center;
-  width: 100%;
+  width: 140px;
 `;
 
 export const ResetButton = styled(FetchButton)`

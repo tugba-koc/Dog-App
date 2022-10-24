@@ -1,5 +1,5 @@
-import React from "react";
-import { Container, DropdownContainer, ErrorText } from "./styles";
+import React from 'react';
+import { Container, DropdownContainer, ErrorText } from './styles';
 
 interface Props {
   showError?: boolean;

@@ -1,5 +1,5 @@
 import './App.css';
-import { AppBody, Container, Description } from './Styles/styled';
+import { AppBody, Container } from './Styles/styled';
 import Header from './components/Header';
 import { fetchBreedImages, fetchDogData, fetchSubBreed } from './axios/api';
 import { useCallback, useEffect, useState } from 'react';
@@ -63,6 +63,9 @@ function App() {
     setisLoading: setisLoading,
   };
 
+  console.log(images);
+  
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -70,17 +73,6 @@ function App() {
     <>
       <Header />
       <Container>
-        <Description>
-          <ul>
-            This is a Dog App built with React JS Using the Dog API. The app
-            uses:
-            <li>ReactJS & TypeScript</li>
-            <li>Redux for State Management</li>
-            <li>Axios for fetching Data</li>
-            <li>Styled Components</li>
-          </ul>
-          <br />
-        </Description>
         <AppBody>
           <DogForm {...props} />
         </AppBody>

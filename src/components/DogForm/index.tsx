@@ -4,10 +4,12 @@ import { renderBreed, renderNumber, renderSubBreed } from '../../helpers';
 import {
   selectBreedState,
   selectError,
+  selectImageResults,
   selectNumber,
   selectSubBreedState,
 } from '../../redux/dog/dogReducer';
 import Button from '../Button';
+import Results from '../Results';
 import Dropdown from './Dropdown';
 import { DogFormContainer } from './styles';
 
@@ -35,6 +37,7 @@ function DogForm(props: Props) {
   const subBreedState = useSelector(selectSubBreedState);
   const numberState = useSelector(selectNumber);
   const errorState = useSelector(selectError);
+  const imageResultsState = useSelector(selectImageResults);
 
   return (
     <DogFormContainer>
@@ -83,6 +86,7 @@ function DogForm(props: Props) {
         </select>{' '}
       </Dropdown>
       <Button setimages={setimages} setisLoading={setisLoading} />
+      {imageResultsState > 0 ? <Results images={images} /> : null}
     </DogFormContainer>
   );
 }

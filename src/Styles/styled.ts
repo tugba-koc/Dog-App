@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.main`
   display: flex;
@@ -9,20 +9,6 @@ export const Container = styled.main`
   margin-bottom: 100px;
   background-color: ${(props) => props.theme.background};
   color: ${(props) => props.theme.primaryText }
-`;
-
-export const Description = styled.div`
-  margin: 20px auto;
-  padding: 15px;
-  text-align: center;
-  max-width: 70vw;
-  li {
-    list-style: none;
-  }
-  img {
-    width: 200px;
-    padding-top: 10px;
-  }
 `;
 
 export const AppBody = styled.div`

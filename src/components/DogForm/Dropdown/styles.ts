@@ -31,6 +31,7 @@ export const Container = styled.div`
     font-weight: bold;
     font-size: 1rem;
     margin: 5px 0;
+    padding-left: 12px;
     @media (max-width: 768px) {
       text-align: center;
     }
@@ -39,7 +40,9 @@ export const Container = styled.div`
 
 export const ErrorText = styled.p`
   color: ${(props) => props.theme.error};
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: normal;
   text-align: left;
+  padding-left : 12px;
+  margin-top: 6px
 `;
