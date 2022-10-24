@@ -87,6 +87,7 @@ function DogForm(props: Props) {
       </Dropdown>
       <Button setimages={setimages} setisLoading={setisLoading} />
       {imageResultsState > 0 ? <Results images={images} /> : null}
+      {!breedList?.length && <div>No Dogs Found</div>}
     </DogFormContainer>
   );
 }

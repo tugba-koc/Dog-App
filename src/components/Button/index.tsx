@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { fetchBreedImages, fetchSubBreedImages } from '../../axios/api';
+import { fetchBreedImages, fetchSubBreedImages } from '../../api/fetch';
 import { RootState } from '../../redux/store';
 import { ActionType } from '../../types/reducer';
 import { FetchButton, ResetButton } from './styles';

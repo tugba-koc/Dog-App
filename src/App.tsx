@@ -1,7 +1,7 @@
 import './App.css';
 import { AppBody, Container } from './Styles/styled';
 import Header from './components/Header';
-import { fetchBreedImages, fetchDogData, fetchSubBreed } from './axios/api';
+import { fetchBreedImages, fetchDogData, fetchSubBreed } from './api/fetch';
 import { useCallback, useEffect, useState } from 'react';
 import DogForm from './components/DogForm';
 import { useSelector } from 'react-redux';
@@ -61,10 +61,7 @@ function App() {
     isLoading: isLoading,
     setimages: setimages,
     setisLoading: setisLoading,
-  };
-
-  console.log(images);
-  
+  };  
 
   if (isLoading) {
     return <div>Loading...</div>;
